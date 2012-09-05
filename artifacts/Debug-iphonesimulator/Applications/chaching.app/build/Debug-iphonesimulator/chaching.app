@@ -1,0 +1,1 @@
+/Users/scostanzo/chaching/chaching/artifacts/Debug-iphonesimulator/Applications/chaching.app
