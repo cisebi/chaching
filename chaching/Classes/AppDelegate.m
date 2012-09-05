@@ -30,5 +30,31 @@
 #pragma mark - App lifecycle
 
 // NOTE: be sure to call all super methods you override.
-
+- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
+    
+    
+    
+    // Open PDF files, Specific Pages, and External Links (not beginning with http://www.example.com) in Safari.app
+    
+    if (
+        
+        (navigationType == UIWebViewNavigationTypeLinkClicked) && 
+        
+        ([[[request URL] absoluteString] hasPrefix:@"http://bit.ly"])
+        
+        ) { 
+        
+        
+        
+        [[UIApplication sharedApplication] openURL:request.URL];
+        
+        return NO;
+        
+    } 
+    
+    
+    
+    return YES;
+    
+}
 @end
